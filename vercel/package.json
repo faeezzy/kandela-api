@@ -1,0 +1,16 @@
+{
+  "name": "kandela",
+  "private": true,
+  "version": "0.2.0",
+  "scripts": {
+    "test": "node --test",
+    "eval": "node eval/eval.js",
+    "check-env": "node scripts/check-env.js",
+    "dev": "node scripts/dev.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.2",
+    "@upstash/ratelimit": "^2.2.1",
+    "@upstash/redis": "^1.41.0"
+  }
+}

@@ -1,0 +1,32 @@
+[
+ {
+  "title": "Dasar candlestick",
+  "page": 2,
+  "text": "Satu candle merangkum harga buka, tertinggi, terendah, dan tutup dalam satu periode.\n\nBadan hijau berarti harga tutup di atas harga buka, merah sebaliknya. Sumbu menunjukkan rentang harga yang sempat disentuh."
+ },
+ {
+  "title": "Support dan resistance",
+  "page": 5,
+  "text": "Support adalah area harga tempat pembeli cenderung muncul, resistance adalah area tempat penjual cenderung muncul.\n\nArea yang sering diuji makin berarti, tetapi tetap bisa tembus."
+ },
+ {
+  "title": "RSI dan MACD",
+  "page": 9,
+  "text": "RSI mengukur kecepatan perubahan harga pada skala 0 sampai 100. Di atas 70 sering disebut jenuh beli dan di bawah 30 jenuh jual, tetapi pada tren kuat kondisi itu bisa bertahan lama.\n\nHistogram MACD positif menandakan momentum naik, negatif menandakan momentum turun."
+ },
+ {
+  "title": "Manajemen risiko",
+  "page": 4,
+  "text": "Tentukan batas risiko per transaksi sebelum masuk, misalnya maksimal 2% dari modal.\n\nUkuran posisi dihitung dari jarak stop loss, bukan dari rasa yakin. Rasio risk-reward di bawah 1:1 menuntut win rate sangat tinggi supaya modal bertahan."
+ },
+ {
+  "title": "Membaca sentimen berita",
+  "page": 12,
+  "text": "Sentimen berita adalah sinyal tambahan, bukan pemicu tunggal. Sentimen sering sudah tercermin di harga.\n\nCari kondisi saat sentimen dan teknikal sejalan, dan waspada ketika keduanya bertentangan."
+ },
+ {
+  "title": "Disiplin dan evaluasi",
+  "page": 15,
+  "text": "Nilai keputusan dari prosesnya: apakah sesuai rencana dan batas risiko.\n\nHasil satu transaksi dipengaruhi keberuntungan, proses yang konsisten yang membangun hasil jangka panjang."
+ }
+]

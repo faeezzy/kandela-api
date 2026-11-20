@@ -34,10 +34,26 @@ Skor dan hasil trade tetap dihitung kode, LLM hanya menjelaskan.
      -d '{"question":"Kenapa risiko dibatasi 2 persen?"}'
    ```
 
-## Evaluasi
+## Evaluasi retrieval
 
-`python eval.py` mengukur apakah materi yang benar muncul di top-k. Tambah pertanyaanmu sendiri di `EVAL_SET`.
-Bandingkan juga jawaban `use_retrieval: true` vs `false` di `/chat` untuk melihat efek RAG.
+Dua implementasi retrieval diuji dengan **EVAL_SET yang sama** (30 pertanyaan dari materi + 5 pertanyaan di luar materi),
+supaya kata kunci dan vektor bisa dibandingkan adil:
+
+- **Kata kunci** (dipakai di deploy Vercel): `cd vercel && npm run eval`. Set soal ada di `vercel/eval/dataset.js`.
+- **Vektor** (Chroma + Ollama, lokal): `python eval.py`. Membaca set soal yang sama dari `vercel/eval/dataset.js`.
+
+### Hasil
+
+| Metode | Hit@1 | Hit@3 | MRR | Di luar materi benar | Tanggal |
+|---|---|---|---|---|---|
+| Kata kunci (stem+skor) | 30/30 (100%) | 30/30 (100%) | 1.000 | 3/5 | 2026-11-20 |
+| Vektor (bge-m3) | jalankan `python eval.py` | | | | |
+
+Catatan jujur: materi contoh baru 6 modul dengan topik yang berbeda jelas, jadi kata kunci pun sudah 100% Hit@1.
+Bedanya baru terasa kalau materi diperbanyak dan banyak istilah mirip (parafrase, sinonim) — di situ vektor biasanya unggul.
+Pada 5 pertanyaan di luar materi, kata kunci masih keliru "menemukan" 2 (mis. kata "harga"/"untung" nyangkut); ini batas wajar
+retrieval kata kunci dan alasan modul 10 (retrieval vektor di Vercel) layak dikerjakan kalau waktu cukup.
+Tambah pertanyaan dari materi kuliahmu di `vercel/eval/dataset.js` untuk angka yang lebih bermakna.
 
 ## Mengganti materi
 

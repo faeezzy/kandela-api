@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: vercel
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install
+        run: npm install
+      - name: Pemeriksaan sintaks semua file JS
+        run: |
+          find api scripts eval tests -name '*.js' -print0 | xargs -0 -n1 node --check
+      - name: Unit test (skor + API)
+        run: npm test
+      - name: Evaluasi retrieval
+        run: npm run eval
